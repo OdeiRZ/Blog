@@ -1,8 +1,6 @@
 <?php
 
-include_once '../config.php';
 $result = false;
-
 if (!empty($_POST)) {
     $sql = "INSERT INTO blog_posts (titulo, contenido) VALUES (:titulo, :contenido)";
     $query = $pdo->prepare($sql);
@@ -28,7 +26,7 @@ if (!empty($_POST)) {
                 <div class="col-md-8">
                     <h2>Nueva Entrada</h2>
                     <p>
-                        <a class="btn btn-default" href="listado-entradas.php">Volver</a>
+                        <a class="btn btn-default" href="listar-entradas.php">Volver</a>
                     </p>
                     <?php
                         if ($result) {
