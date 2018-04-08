@@ -1,11 +1,3 @@
-<?php
-
-$query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
-$query->execute();
-$entradasBlog = $query->fetchAll(PDO::FETCH_ASSOC);
-
-?>
-
 <html>
     <head>
         <title>Blog</title>
@@ -42,7 +34,7 @@ $entradasBlog = $query->fetchAll(PDO::FETCH_ASSOC);
                 <div class = "col-md-12">
                     <footer>
                         Pie de ejemplo<br>
-                        <a href="admin/index.php">Panel Admin.</a>
+                        <a href="../admin/index.php">Panel Admin.</a>
                     </footer>
                 </div>
             </div>

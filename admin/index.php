@@ -25,7 +25,7 @@
                 <div class = "col-md-12">
                     <footer>
                         Pie de ejemplo<br>
-                        <a href="../index.php">Inicio</a>
+                        <a href="../views/index.php">Inicio</a>
                     </footer>
                 </div>
             </div>
