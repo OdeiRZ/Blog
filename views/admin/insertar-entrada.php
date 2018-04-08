@@ -10,12 +10,24 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <h2>Panel Admin.</h2>
-                    <ul>
-                        <li>
-                            <a href="listar-entradas.php">Admin. Entradas</a>
-                        </li>
-                    </ul>
+                    <h2>Nueva Entrada</h2>
+                    <p>
+                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>admin/listar-entradas">Volver</a>
+                    </p>
+                    <?php
+                        if (isset($result) && $result) {
+                            echo '<div class="alert alert-success">Entrada Guardada</div>';
+                        }
+                    ?>
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="inputTitulo">Titulo</label>
+                            <input class="form-control" type="text" name="titulo" id="inputTitulo">
+                        </div>
+                        <textarea class="form-control" name="contenido" id="inputContenido" rows="5"></textarea>
+                        <br>
+                        <input class="btn btn btn-primary" type="submit" value="Guardar">
+                    </form>
                 </div>
                 <div class="col-md-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -25,7 +37,7 @@
                 <div class = "col-md-12">
                     <footer>
                         Pie de ejemplo<br>
-                        <a href="../views/index.php">Inicio</a>
+                        <a href="<?php echo BASE_URL; ?>admin">Panel Admin.</a>
                     </footer>
                 </div>
             </div>

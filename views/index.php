@@ -34,7 +34,7 @@
                 <div class = "col-md-12">
                     <footer>
                         Pie de ejemplo<br>
-                        <a href="../admin/index.php">Panel Admin.</a>
+                        <a href="<?php echo BASE_URL; ?>admin">Panel Admin.</a>
                     </footer>
                 </div>
             </div>
