@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <h2>Listado Entradas</h2>
-                    <a class="btn btn-primary" href="<?php echo BASE_URL; ?>admin/entradas/insertar-entrada">Nueva Entrada</a>
+                    <a class="btn btn-primary" href="<?php echo BASE_URL; ?>admin/entradas/crear-entrada">Nueva Entrada</a>
                     <table class="table">
                         <tr>
                             <th>Titulo</th>

@@ -32,21 +32,21 @@ $router->get('/admin/listar-entradas', function() use ($pdo) {
     $query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
     $query->execute();
     $entradasBlog = $query->fetchAll(PDO::FETCH_ASSOC);
-    return render('../views/admin/listar-entradas.php', ['entradasBlog' => $entradasBlog]);
+    return render('../views/admin/listar.php', ['entradasBlog' => $entradasBlog]);
 });
 
-$router->get('/admin/entradas/insertar-entrada', function() {
-    return render('../views/admin/insertar-entrada.php');
+$router->get('/admin/entradas/crear-entrada', function() {
+    return render('../views/admin/crear.php');
 });
 
-$router->post('/admin/entradas/insertar-entrada', function() use ($pdo) {
+$router->post('/admin/entradas/crear-entrada', function() use ($pdo) {
     $sql = "INSERT INTO blog_posts (titulo, contenido) VALUES (:titulo, :contenido)";
     $query = $pdo->prepare($sql);
     $result = $query->execute([
         'titulo' => $_POST['titulo'],
         'contenido' => $_POST['contenido']
     ]);
-    return render('../views/admin/insertar-entrada.php', ['result' => $result]);
+    return render('../views/admin/crear.php', ['result' => $result]);
 });
 
 $router->get('/', function() use ($pdo) {
