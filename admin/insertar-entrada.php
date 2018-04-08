@@ -1,9 +1,6 @@
 <?php
 
-include_once 'config.php';
-$query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
-$query->execute();
-$entradasBlog = $query->fetchAll(PDO::FETCH_ASSOC);
+include_once '../config.php';
 
 ?>
 
@@ -19,21 +16,17 @@ $entradasBlog = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <h2>Inicio</h2>
-                    <?php
-                    foreach($entradasBlog as $entrada) {
-                        echo '<div class="blog-post">';
-                        echo '<h2>' . $entrada['titulo'] . '</h2>';
-                        echo '<p>08/04/2018 por <a href="">Odei</a> </p>';
-                        echo '<div class="blog-post-image">';
-                        echo '<img src="imagenes/teclado.jpg" alt="Teclado">';
-                        echo '</div>';
-                        echo '<div class="blog-post-content">';
-                        echo  $entrada['contenido'];
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                    ?>
+                    <h2>Nueva Entrada</h2>
+                    <a class="btn btn-default" href="listado-entradas.php">Volver</a>
+                    <form action="insertar-entrada.php" method="post">
+                        <div class="form-group">
+                            <label for="inputTitulo">Titulo</label>
+                            <input class="form-control" type="text" name="titulo" id="inputTitulo">
+                        </div>
+                        <textarea class="form-control" name="contenido" id="inputContenido" rows="5"></textarea>
+                        <br>
+                        <input class="btn btn btn-primary" type="submit" value="Guardar">
+                    </form>
                 </div>
                 <div class="col-md-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -43,7 +36,7 @@ $entradasBlog = $query->fetchAll(PDO::FETCH_ASSOC);
                 <div class = "col-md-12">
                     <footer>
                         Pie de ejemplo<br>
-                        <a href="admin/index.php">Panel Admin.</a>
+                        <a href="index.php">Panel Admin.</a>
                     </footer>
                 </div>
             </div>
