@@ -1,6 +1,16 @@
 <?php
 
 include_once '../config.php';
+$result = false;
+
+if (!empty($_POST)) {
+    $sql = "INSERT INTO blog_posts (titulo, contenido) VALUES (:titulo, :contenido)";
+    $query = $pdo->prepare($sql);
+    $result = $query->execute([
+        'titulo' => $_POST['titulo'],
+        'contenido' => $_POST['contenido']
+    ]);
+}
 
 ?>
 
@@ -17,7 +27,14 @@ include_once '../config.php';
             <div class="row">
                 <div class="col-md-8">
                     <h2>Nueva Entrada</h2>
-                    <a class="btn btn-default" href="listado-entradas.php">Volver</a>
+                    <p>
+                        <a class="btn btn-default" href="listado-entradas.php">Volver</a>
+                    </p>
+                    <?php
+                        if ($result) {
+                            echo '<div class="alert alert-success">Entrada Guardada</div>';
+                        }
+                    ?>
                     <form action="insertar-entrada.php" method="post">
                         <div class="form-group">
                             <label for="inputTitulo">Titulo</label>
