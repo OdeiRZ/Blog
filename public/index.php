@@ -26,13 +26,9 @@ $router = new RouteCollector();
 
 $router->controller('/admin', App\Controllers\Admin\IndexController::class);
 $router->controller('/admin/entradas', App\Controllers\Admin\EntradasController::class);
-//$router->controller('/admin/entradas/crear-entrada', App\Controllers\Admin\EntradasController::class);
-//$router->controller('/admin/entradas/crear-entrada', App\Controllers\Admin\EntradasController::class);
 $router->controller('/', App\Controllers\IndexController::class);
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $route);
 
 echo $response;
-
-
