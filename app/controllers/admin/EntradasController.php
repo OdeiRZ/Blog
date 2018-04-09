@@ -2,18 +2,20 @@
 
 namespace App\Controllers\Admin;
 
-class EntradasController {
+use App\Controllers\BaseController;
+
+class EntradasController extends BaseController{
 
     public function getIndex() {
         global $pdo;
         $query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
         $query->execute();
         $entradasBlog = $query->fetchAll(\PDO::FETCH_ASSOC);
-        return render('../views/admin/listar.php', ['entradasBlog' => $entradasBlog]);
+        return $this->render('admin/entradas.twig', ['entradasBlog' => $entradasBlog]);
     }
 
     public function getCrear() {
-        return render('../views/admin/crear.php');
+        return $this->render('admin/crear.twig');
     }
 
     public function postCrear() {
@@ -24,6 +26,6 @@ class EntradasController {
             'titulo' => $_POST['titulo'],
             'contenido' => $_POST['contenido']
         ]);
-        return render('../views/admin/crear.php', ['result' => $result]);
+        return $this->render('admin/crear.twig', ['result' => $result]);
     }
 }
