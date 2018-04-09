@@ -4,16 +4,19 @@ namespace App\Controllers;
 
 use Twig_Loader_Filesystem;
 
-class BaseControler {
+class BaseController {
 
     protected $templateEngine;
 
     public function __construct() {
         $loader = new Twig_Loader_Filesystem('../views');
-        $this->templateEngine = \Twig_Environment($loader, [
+        $this->templateEngine = new \Twig_Environment($loader, [
             'debug' => true,
             'cache' => false
         ]);
+        $this->templateEngine->addFilter(new \Twig_SimpleFilter('url', function ($ruta) {
+            return BASE_URL . $ruta;
+        }));
     }
 
     public function render($fileName, $data = []) {

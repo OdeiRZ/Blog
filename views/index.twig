@@ -11,20 +11,18 @@
             <div class="row">
                 <div class="col-md-8">
                     <h2>Inicio</h2>
-                    <?php
-                    foreach($entradasBlog as $entrada) {
-                        echo '<div class="blog-post">';
-                        echo '<h2>' . $entrada['titulo'] . '</h2>';
-                        echo '<p>08/04/2018 por <a href="">Odei</a> </p>';
-                        echo '<div class="blog-post-image">';
-                        echo '<img src="imagenes/teclado.jpg" alt="Teclado">';
-                        echo '</div>';
-                        echo '<div class="blog-post-content">';
-                        echo  $entrada['contenido'];
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                    ?>
+                    {% for entrada in entradasBlog %}
+                        <div class="blog-post">
+                            <h2>{{ entrada.titulo }}</h2>
+                            <p>08/04/2018 por <a href="">Odei</a></p>
+                            <div class="blog-post-image">
+                                <img src="imagenes/teclado.jpg" alt="Teclado">
+                            </div>
+                            <div class="blog-post-content">
+                                {{ entrada.contenido }}
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="col-md-4">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -34,7 +32,7 @@
                 <div class = "col-md-12">
                     <footer>
                         Pie de ejemplo<br>
-                        <a href="<?php echo BASE_URL; ?>admin">Panel Admin.</a>
+                        <a href="{{  'admin' | url }}">Panel Admin.</a>
                     </footer>
                 </div>
             </div>
