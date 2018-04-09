@@ -24,37 +24,11 @@ use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
 
-$router->get('/admin', function() {
-    return render('../views/admin/index.php');
-});
-
-$router->get('/admin/listar-entradas', function() use ($pdo) {
-    $query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
-    $query->execute();
-    $entradasBlog = $query->fetchAll(PDO::FETCH_ASSOC);
-    return render('../views/admin/listar.php', ['entradasBlog' => $entradasBlog]);
-});
-
-$router->get('/admin/entradas/crear-entrada', function() {
-    return render('../views/admin/crear.php');
-});
-
-$router->post('/admin/entradas/crear-entrada', function() use ($pdo) {
-    $sql = "INSERT INTO blog_posts (titulo, contenido) VALUES (:titulo, :contenido)";
-    $query = $pdo->prepare($sql);
-    $result = $query->execute([
-        'titulo' => $_POST['titulo'],
-        'contenido' => $_POST['contenido']
-    ]);
-    return render('../views/admin/crear.php', ['result' => $result]);
-});
-
-$router->get('/', function() use ($pdo) {
-    $query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
-    $query->execute();
-    $entradasBlog = $query->fetchAll(PDO::FETCH_ASSOC);
-    return render('../views/index.php', ['entradasBlog' => $entradasBlog]);
-});
+$router->controller('/admin', App\Controllers\Admin\IndexController::class);
+$router->controller('/admin/entradas', App\Controllers\Admin\EntradasController::class);
+//$router->controller('/admin/entradas/crear-entrada', App\Controllers\Admin\EntradasController::class);
+//$router->controller('/admin/entradas/crear-entrada', App\Controllers\Admin\EntradasController::class);
+$router->controller('/', App\Controllers\IndexController::class);
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $route);

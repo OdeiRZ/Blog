@@ -12,7 +12,7 @@
                 <div class="col-md-8">
                     <h2>Nueva Entrada</h2>
                     <p>
-                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>admin/listar-entradas">Volver</a>
+                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>admin/entradas">Volver</a>
                     </p>
                     <?php
                         if (isset($result) && $result) {

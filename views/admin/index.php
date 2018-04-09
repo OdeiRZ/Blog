@@ -13,7 +13,7 @@
                     <h2>Panel Admin.</h2>
                     <ul>
                         <li>
-                            <a href="<?php echo BASE_URL; ?>admin/listar-entradas">Admin. Entradas</a>
+                            <a href="<?php echo BASE_URL; ?>admin/entradas">Admin. Entradas</a>
                         </li>
                     </ul>
                 </div>
