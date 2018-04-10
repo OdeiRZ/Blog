@@ -39,6 +39,7 @@ $router = new RouteCollector();
 
 $router->controller('/admin', App\Controllers\Admin\IndexController::class);
 $router->controller('/admin/entradas', App\Controllers\Admin\EntradaController::class);
+$router->controller('/admin/usuarios', App\Controllers\Admin\UsuarioController::class);
 $router->controller('/', App\Controllers\IndexController::class);
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());

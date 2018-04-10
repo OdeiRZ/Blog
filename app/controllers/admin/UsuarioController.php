@@ -6,11 +6,13 @@ use App\Controllers\BaseController;
 use App\Models\EntradaBlog;
 use Sirius\Validation\Validator;
 
-class EntradaController extends BaseController {
+class UsuarioController extends BaseController {
 
     public function getIndex() {
-        $entradasBlog = EntradaBlog::all();
-        return $this->render('admin/entradas.twig', ['entradasBlog' => $entradasBlog]);
+        $usuario = EntradaBlog::all();
+        return $this->render('admin/usuarios.twig', [
+            'usuario' => $usuario
+        ]);
     }
 
     public function getCrear() {
