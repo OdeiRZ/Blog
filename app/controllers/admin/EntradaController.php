@@ -3,14 +3,12 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\EntradaBlog;
 
-class EntradasController extends BaseController{
+class EntradaController extends BaseController{
 
     public function getIndex() {
-        global $pdo;
-        $query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
-        $query->execute();
-        $entradasBlog = $query->fetchAll(\PDO::FETCH_ASSOC);
+        $entradasBlog = EntradaBlog::all();
         return $this->render('admin/entradas.twig', ['entradasBlog' => $entradasBlog]);
     }
 
@@ -19,13 +17,12 @@ class EntradasController extends BaseController{
     }
 
     public function postCrear() {
-        global $pdo;
-        $sql = "INSERT INTO blog_posts (titulo, contenido) VALUES (:titulo, :contenido)";
-        $query = $pdo->prepare($sql);
-        $result = $query->execute([
+        $entradaBlog = new EntradaBlog([
             'titulo' => $_POST['titulo'],
             'contenido' => $_POST['contenido']
         ]);
+        $entradaBlog->save();
+        $result = true;
         return $this->render('admin/crear.twig', ['result' => $result]);
     }
 }
