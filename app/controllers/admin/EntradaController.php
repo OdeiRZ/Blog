@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\EntradaBlog;
+use Sirius\Validation\Validator;
 
 class EntradaController extends BaseController{
 
@@ -17,12 +18,25 @@ class EntradaController extends BaseController{
     }
 
     public function postCrear() {
-        $entradaBlog = new EntradaBlog([
-            'titulo' => $_POST['titulo'],
-            'contenido' => $_POST['contenido']
+        $errores = [];
+        $result = false;
+        $validador = new Validator();
+        $validador->add('titulo', 'required');
+        $validador->add('contenido', 'required');
+
+        if ($validador->validate($_POST)) {
+            $entradaBlog = new EntradaBlog([
+                'titulo' => $_POST['titulo'],
+                'contenido' => $_POST['contenido']
+            ]);
+            $entradaBlog->save();
+            $result = true;
+        } else {
+            $errores = $validador->getMessages();
+        }
+        return $this->render('admin/crear.twig', [
+            'result' => $result,
+            'errores' => $errores
         ]);
-        $entradaBlog->save();
-        $result = true;
-        return $this->render('admin/crear.twig', ['result' => $result]);
     }
 }
