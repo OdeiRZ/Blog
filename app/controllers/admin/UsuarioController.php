@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\EntradaBlog;
+use App\Models\Usuario;
 use Sirius\Validation\Validator;
 
 class UsuarioController extends BaseController {
@@ -16,27 +17,29 @@ class UsuarioController extends BaseController {
     }
 
     public function getCrear() {
-        return $this->render('admin/crear.twig');
+        return $this->render('admin/crear-usuario.twig');
     }
 
     public function postCrear() {
         $errores = [];
         $result = false;
         $validador = new Validator();
-        $validador->add('titulo', 'required');
-        $validador->add('contenido', 'required');
+        $validador->add('nombre', 'required');
+        $validador->add('email', 'required');
+        $validador->add('email', 'email');
+        $validador->add('password', 'required');
 
         if ($validador->validate($_POST)) {
-            $entradaBlog = new EntradaBlog([
-                'titulo' => $_POST['titulo'],
-                'contenido' => $_POST['contenido']
-            ]);
-            $entradaBlog->save();
+            $usuario = new Usuario();
+            $usuario->nombre = $_POST['nombre'];
+            $usuario->email = $_POST['email'];
+            $usuario->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $usuario->save();
             $result = true;
         } else {
             $errores = $validador->getMessages();
         }
-        return $this->render('admin/crear.twig', [
+        return $this->render('admin/crear-usuario.twig', [
             'result' => $result,
             'errores' => $errores
         ]);

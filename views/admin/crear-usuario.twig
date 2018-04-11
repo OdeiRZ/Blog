@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+
+{% block contenido %}
+    <h2>Nuevo Usuario</h2>
+    <p>
+        <a class="btn btn-default" href="{{ 'admin/usuarios' | url }}">Volver</a>
+    </p>
+    {% if errores %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for input, mensajes in errores %}
+                    {% for mensaje in mensajes %}
+                        <li>{{ input }}: {{ mensaje }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% if result %}
+        <div class="alert alert-success">Usuario Guardado</div>
+    {% endif %}
+    <form method="post">
+        <div class="form-group">
+            <label for="inputNombre">Nombre</label>
+            <input class="form-control" type="text" name="nombre" id="inputNombre">
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input class="form-control" type="text" name="email" id="inputEmail">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input class="form-control" type="password" name="password" id="inputPassword">
+        </div>
+        <br>
+        <input class="btn btn btn-primary" type="submit" value="Guardar">
+    </form>
+{% endblock %}

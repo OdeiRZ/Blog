@@ -14,7 +14,7 @@ class EntradaController extends BaseController {
     }
 
     public function getCrear() {
-        return $this->render('admin/crear.twig');
+        return $this->render('admin/crear-entrada.twig');
     }
 
     public function postCrear() {
@@ -34,7 +34,7 @@ class EntradaController extends BaseController {
         } else {
             $errores = $validador->getMessages();
         }
-        return $this->render('admin/crear.twig', [
+        return $this->render('admin/crear-entrada.twig', [
             'result' => $result,
             'errores' => $errores
         ]);
