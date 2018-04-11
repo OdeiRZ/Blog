@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 
 require_once '../vendor/autoload.php';
 
+session_start();
+
 $dotEnv = new \Dotenv\Dotenv(__DIR__ . '/..');
 $dotEnv->load();
 
@@ -37,6 +39,7 @@ use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
 
+$router->controller('/acceso', App\Controllers\LoginController::class);
 $router->controller('/admin', App\Controllers\Admin\IndexController::class);
 $router->controller('/admin/entradas', App\Controllers\Admin\EntradaController::class);
 $router->controller('/admin/usuarios', App\Controllers\Admin\UsuarioController::class);
