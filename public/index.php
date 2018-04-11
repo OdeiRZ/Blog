@@ -39,13 +39,21 @@ use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
 
+$router->filter('acceso', function() {
+    if (!isset($_SESSION['idUsuario'])) {
+        header('Location: ' . BASE_URL . 'acceso/login');
+        return false;
+    }
+});
+
 $router->controller('/acceso', App\Controllers\LoginController::class);
-$router->controller('/admin', App\Controllers\Admin\IndexController::class);
-$router->controller('/admin/entradas', App\Controllers\Admin\EntradaController::class);
-$router->controller('/admin/usuarios', App\Controllers\Admin\UsuarioController::class);
+$router->group(['before' => 'acceso'], function($router) {
+    $router->controller('/admin', App\Controllers\Admin\IndexController::class);
+    $router->controller('/admin/entradas', App\Controllers\Admin\EntradaController::class);
+    $router->controller('/admin/usuarios', App\Controllers\Admin\UsuarioController::class);
+});
 $router->controller('/', App\Controllers\IndexController::class);
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $route);
-
 echo $response;
