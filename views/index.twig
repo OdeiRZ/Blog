@@ -1,6 +1,7 @@
 {% extends "layout.twig" %}
 
 {% block contenido %}
+    <h2>Inicio</h2>
     {% for entrada in entradasBlog %}
         <div class="blog-post">
             <h2><a href="{{ 'detalle/' | url }}{{ entrada.id }}">{{ entrada.titulo }}</a></h2>
