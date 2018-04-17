@@ -45,7 +45,6 @@ $router->filter('acceso', function() {
         return false;
     }
 });
-
 $router->controller('/acceso', App\Controllers\LoginController::class);
 $router->group(['before' => 'acceso'], function($router) {
     $router->controller('/admin', App\Controllers\Admin\IndexController::class);
@@ -53,6 +52,7 @@ $router->group(['before' => 'acceso'], function($router) {
     $router->controller('/admin/usuarios', App\Controllers\Admin\UsuarioController::class);
 });
 $router->controller('/', App\Controllers\IndexController::class);
+$router->controller('/detalle', App\Controllers\DetalleController::class);
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $route);

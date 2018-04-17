@@ -3,15 +3,12 @@
 {% block contenido %}
     {% for entrada in entradasBlog %}
         <div class="blog-post">
-            <h2>{{ entrada.titulo }}</h2>
+            <h2><a href="{{ 'detalle/' | url }}{{ entrada.id }}">{{ entrada.titulo }}</a></h2>
             <p>08/04/2018 por <a href="">Odei</a></p>
             <div class="blog-post-image">
                 {% if entrada.imagen %}
                     <img src="{{ entrada.imagen }}" alt="Teclado">
                 {% endif %}
-            </div>
-            <div class="blog-post-content">
-                {{ entrada.contenido }}
             </div>
         </div>
     {% endfor %}

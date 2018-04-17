@@ -107,7 +107,7 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
                 'file' => $e->getFile().':'.$e->getLine(),
                 'faultcode' => 'foo',
                 'faultactor' => 'hello',
-                'detail' => 'world',
+                'detalle' => 'world',
             ),
         ), $formatted);
     }

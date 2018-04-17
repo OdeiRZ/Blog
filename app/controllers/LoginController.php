@@ -21,7 +21,7 @@ class LoginController extends BaseController {
         $validador->add('password', 'required');
 
         if ($validador->validate($_POST)) {
-            $usuario = Usuario::where('email',$_POST['email'])->first();
+            $usuario = Usuario::where('email', $_POST['email'])->first();
             if ($usuario) {
                 if (password_verify($_POST['password'], $usuario->password)) {
                     Log::logInfo('Login usuario: ' . $usuario->id);

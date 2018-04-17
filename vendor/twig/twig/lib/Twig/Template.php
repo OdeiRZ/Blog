@@ -13,7 +13,7 @@
 /**
  * Default base class for compiled templates.
  *
- * This class is an implementation detail of how template compilation currently
+ * This class is an implementation detalle of how template compilation currently
  * works, which might change. It should never be used directly. Use $twig->load()
  * instead, which returns an instance of Twig_TemplateWrapper.
  *

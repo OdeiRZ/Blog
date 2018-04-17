@@ -1,0 +1,25 @@
+{% extends "layout.twig" %}
+
+{% block contenido %}
+    <div class="blog-post">
+        {% if entradaBlog %}
+            <h2>{{ entradaBlog.titulo }}</h2>
+            <p>08/04/2018 por <a href="">Odei</a></p>
+            <div class="blog-post-image">
+                {% if entrada.imagen %}
+                    <img src="{{ entradaBlog.imagen }}" alt="EntradaBlog">
+                {% endif %}
+            </div>
+            <div class="blog-post-content">
+                {{ entradaBlog.contenido }}
+            </div>
+
+        {% else %}
+            <h2>Entrada no encontrada</h2>
+        {% endif %}
+        <br>
+        <p>
+            <a class="btn btn-default" href="{{ '' | url }}">Volver</a>
+        </p>
+    </div>
+{% endblock %}

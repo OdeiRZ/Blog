@@ -137,7 +137,7 @@ class NormalizerFormatter implements FormatterInterface
             }
 
             if (isset($e->detail)) {
-                $data['detail'] = $e->detail;
+                $data['detalle'] = $e->detail;
             }
         }
 
