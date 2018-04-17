@@ -39,7 +39,7 @@ class LoginController extends BaseController {
     }
 
     public function getLogout() {
-        Log::logInfo('Logout usuario: ' . $_SESSION['idUsuario');
+        Log::logInfo('Logout usuario: ' . $_SESSION['idUsuario']);
         unset($_SESSION['idUsuario']);
         header('Location: ' . BASE_URL . 'acceso/login');
     }
