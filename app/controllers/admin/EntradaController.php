@@ -29,6 +29,9 @@ class EntradaController extends BaseController {
                 'titulo' => $_POST['titulo'],
                 'contenido' => $_POST['contenido']
             ]);
+            if ($_POST['imagen']) {
+                $entradaBlog->imagen = $_POST['imagen'];
+            }
             $entradaBlog->save();
             $result = true;
         } else {

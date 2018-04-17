@@ -6,7 +6,9 @@
             <h2>{{ entrada.titulo }}</h2>
             <p>08/04/2018 por <a href="">Odei</a></p>
             <div class="blog-post-image">
-                <img src="imagenes/teclado.jpg" alt="Teclado">
+                {% if entrada.imagen %}
+                    <img src="{{ entrada.imagen }}" alt="Teclado">
+                {% endif %}
             </div>
             <div class="blog-post-content">
                 {{ entrada.contenido }}
