@@ -13,4 +13,11 @@
             </div>
         </div>
     {% endfor %}
+
+    {% if paginador.anterior %}
+        <a class="btn btn-default" href="{{ '' | url }}{{ paginador.anterior }}">Anterior</a>
+    {% endif %}
+    {% if paginador.siguiente %}
+        <a class="btn btn-default" href="{{ '' | url }}{{ paginador.siguiente }}">Siguiente</a>
+    {% endif %}
 {% endblock %}

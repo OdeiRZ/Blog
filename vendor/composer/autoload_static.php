@@ -45,10 +45,6 @@ class ComposerStaticInite663aa5d497b649e3616be430621a920
             'Dotenv\\' => 7,
             'Doctrine\\Common\\Inflector\\' => 26,
         ),
-        'C' => 
-        array (
-            'Carbon\\' => 7,
-        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -116,14 +112,14 @@ class ComposerStaticInite663aa5d497b649e3616be430621a920
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
-        'Carbon\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
-        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
     );
 
     public static $prefixesPsr0 = array (
@@ -141,6 +137,7 @@ class ComposerStaticInite663aa5d497b649e3616be430621a920
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInite663aa5d497b649e3616be430621a920::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInite663aa5d497b649e3616be430621a920::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInite663aa5d497b649e3616be430621a920::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInite663aa5d497b649e3616be430621a920::$prefixesPsr0;
 
         }, null, ClassLoader::class);
