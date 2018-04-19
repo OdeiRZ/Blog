@@ -12,8 +12,8 @@
         {% for entrada in entradasBlog %}
             <tr>
                 <td>{{ entrada.titulo }}</td>
-                <td>Editar</td>
-                <td>Borrar</td>
+                <td><a href="{{ 'admin/entradas/editar/' | url }}{{ entrada.id }}">Editar</a></td>
+                <td><a href="{{ 'admin/entradas/borrar/' | url }}{{ entrada.id }}">Borrar</a></td>
             </tr>
         {% endfor %}
     </table>

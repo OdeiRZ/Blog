@@ -45,6 +45,7 @@ $router->filter('acceso', function() {
         return false;
     }
 });
+
 $router->controller('/acceso', App\Controllers\LoginController::class);
 $router->group(['before' => 'acceso'], function($router) {
     $router->controller('/admin', App\Controllers\Admin\IndexController::class);

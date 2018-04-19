@@ -42,4 +42,37 @@ class EntradaController extends BaseController {
             'errores' => $errores
         ]);
     }
+
+    public function getEditar($idEntrada = null) {
+        $entradaBlog = EntradaBlog::find($idEntrada);
+        return $this->render('admin/editar-entrada.twig', [
+            'entradaBlog' => $entradaBlog
+        ]);
+    }
+
+    public function postEditar($idEntrada = null) {
+        $errores = [];
+        $result = false;
+        $validador = new Validator();
+        $validador->add('titulo', 'required');
+        $validador->add('contenido', 'required');
+        $entradaBlog = EntradaBlog::find($idEntrada);
+
+        if ($validador->validate($_POST)) {
+            $entradaBlog->titulo = $_POST['titulo'];
+            $entradaBlog->contenido = $_POST['contenido'];
+            if ($_POST['imagen']) {
+                $entradaBlog->imagen = $_POST['imagen'];
+            }
+            $entradaBlog->save();
+            $result = true;
+        } else {
+            $errores = $validador->getMessages();
+        }
+        return $this->render('admin/editar-entrada.twig', [
+            'result' => $result,
+            'errores' => $errores,
+            'entradaBlog' => $entradaBlog
+        ]);
+    }
 }

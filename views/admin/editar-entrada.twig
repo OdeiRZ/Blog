@@ -1,0 +1,31 @@
+{% extends "layout.twig" %}
+
+{% block contenido %}
+    <h2>Editar Entrada</h2>
+    <p>
+        <a class="btn btn-default" href="{{ 'admin/entradas' | url }}">Volver</a>
+    </p>
+    {% if errores %}
+        {% include('partials/errores.twig') %}
+    {% endif %}
+    {% if result %}
+        <div class="alert alert-success">Entrada Guardada</div>
+    {% endif %}
+    {% if entradaBlog %}
+        <form method="post">
+            <div class="form-group">
+                <label for="inputTitulo">Titulo</label>
+                <input class="form-control" type="text" name="titulo" id="inputTitulo" value="{{ entradaBlog.titulo }}">
+            </div>
+            <div class="form-group">
+                <label for="inputImagen">Imagen</label>
+                <input class="form-control" type="text" name="imagen" id="inputImagen" value="{{ entradaBlog.imagen }}">
+            </div>
+            <textarea class="form-control" name="contenido" id="inputContenido" rows="5">{{ entradaBlog.contenido }}</textarea>
+            <br>
+            <input class="btn btn btn-primary" type="submit" value="Guardar">
+        </form>
+    {% else %}
+        <p>La entrada seleccionada no existe</p>
+    {% endif %}
+{% endblock %}
