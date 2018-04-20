@@ -5,19 +5,24 @@
     <p>
         <a class="btn btn-primary" href="{{ 'admin/usuarios/crear' | url }}">Nuevo Usuario</a>
     </p>
-    <table class="table">
-        <tr>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Borrar</th>
-        </tr>
-        {% for usuario in usuarios %}
+    {% if usuarios is not empty %}
+        <table class="table">
             <tr>
-                <td>{{ usuario.titulo }}</td>
-                <td>{{ usuario.email }}</td>
-                <td>Editar</td>
-                <td>Borrar</td>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
             </tr>
-        {% endfor %}
-    </table>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.nombre }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td><a href="{{ 'admin/usuarios/editar/' | url }}{{ usuario.id }}">Editar</a></td>
+                    <td><a href="{{ 'admin/usuarios/borrar/' | url }}{{ usuario.id }}">Borrar</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No hay usuarios para mostrar</p>
+    {% endif %}
 {% endblock %}

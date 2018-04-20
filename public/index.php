@@ -18,7 +18,6 @@ define('BASE_URL', $baseUrl);
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
-
 $capsule->addConnection([
     'driver'    => 'mysql',
     'host'      => getenv('DB_HOST'),
@@ -33,10 +32,8 @@ $capsule->addConnection([
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
-$route = isset($_GET['route']) ? $_GET['route'] : '/';
-
 use Phroute\Phroute\RouteCollector;
-
+$route = isset($_GET['route']) ? $_GET['route'] : '/';
 $router = new RouteCollector();
 
 $router->filter('acceso', function() {
