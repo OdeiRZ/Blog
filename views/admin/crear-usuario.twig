@@ -11,7 +11,7 @@
     {% if result %}
         <div class="alert alert-success">Usuario Guardado</div>
     {% endif %}
-    <form method="post">
+    <form method="post" onsubmit="return validarForm()">
         <div class="form-group">
             <label for="inputNombre">Nombre</label>
             <input class="form-control" type="text" name="nombre" id="inputNombre">
@@ -27,4 +27,22 @@
         <br>
         <input class="btn btn btn-primary" type="submit" value="Guardar">
     </form>
+{% endblock %}
+
+{% block js %}
+    <script>
+        function validarForm() {
+            var nombre = document.getElementById('inputNombre').value.trim();
+            var email = document.getElementById('inputEmail').value.trim();
+            var password = document.getElementById('inputPassword').value.trim();
+            if (nombre === '' || email === '' || password === '') {
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'El Nombre, Email y Password son Obligatorios'
+                });
+                return false;
+            }
+        }
+    </script>
 {% endblock %}
