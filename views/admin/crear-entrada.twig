@@ -11,17 +11,34 @@
     {% if result %}
         <div class="alert alert-success">Entrada Guardada</div>
     {% endif %}
-    <form method="post">
+    <form method="post" onsubmit="return validarForm()">
         <div class="form-group">
             <label for="inputTitulo">Titulo</label>
             <input class="form-control" type="text" name="titulo" id="inputTitulo">
         </div>
         <div class="form-group">
-            <label for="inputImageno">Imagen</label>
-            <input class="form-control" type="text" name="imagen" id="inputImageno">
+            <label for="inputImagen">Imagen</label>
+            <input class="form-control" type="text" name="imagen" id="inputImagen">
         </div>
         <textarea class="form-control" name="contenido" id="inputContenido" rows="5"></textarea>
         <br>
         <input class="btn btn btn-primary" type="submit" value="Guardar">
     </form>
+{% endblock %}
+
+{% block js %}
+    <script>
+        function validarForm() {
+            var titulo = document.getElementById('inputTitulo').value.trim();
+            var contenido = document.getElementById('inputContenido').value.trim();
+            if (titulo === '' || contenido === '') {
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'El Título y Contenido son Obligatorios'
+                });
+                return false;
+            }
+        }
+    </script>
 {% endblock %}
