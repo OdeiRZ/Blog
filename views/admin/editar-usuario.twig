@@ -10,7 +10,7 @@
         <div class="alert alert-success">Usuario Guardado</div>
     {% endif %}
     {% if usuario %}
-        <form method="post">
+        <form method="post" onsubmit="return validarForm()">
             <div class="form-group">
                 <label for="inputNombre">Nombre</label>
                 <input class="form-control" type="text" name="nombre" id="inputNombre" value="{{ usuario.nombre }}">
@@ -25,4 +25,21 @@
     {% else %}
         <p class="alert alert-danger">El usuario seleccionado no existe</p>
     {% endif %}
+{% endblock %}
+
+{% block js %}
+    <script>
+        function validarForm() {
+            var nombre = document.getElementById('inputNombre').value.trim();
+            var email = document.getElementById('inputEmail').value.trim();
+            if (nombre === '' || email === '') {
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'El Nombre y Email son Obligatorios'
+                });
+                return false;
+            }
+        }
+    </script>
 {% endblock %}

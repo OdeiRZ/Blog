@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cfe431b-97a1-47d4-8171-c6ea79659c33" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/crear-usuario.twig" afterPath="$PROJECT_DIR$/views/admin/crear-usuario.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/editar-usuario.twig" afterPath="$PROJECT_DIR$/views/admin/editar-usuario.twig" />
     </list>
     <ignored path="Blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,21 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crear-usuario.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="crear-usuario.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin/crear-usuario.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.036945812">
-              <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+            <state vertical-scroll-proportion="-8.461538">
+              <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editar-usuario.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editar-usuario.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/admin/editar-usuario.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.131578">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.035670355">
+              <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -124,8 +124,8 @@
         <option value="$PROJECT_DIR$/views/layout.twig" />
         <option value="$PROJECT_DIR$/views/admin/crear-entrada.twig" />
         <option value="$PROJECT_DIR$/views/admin/editar-entrada.twig" />
-        <option value="$PROJECT_DIR$/views/admin/editar-usuario.twig" />
         <option value="$PROJECT_DIR$/views/admin/crear-usuario.twig" />
+        <option value="$PROJECT_DIR$/views/admin/editar-usuario.twig" />
       </list>
     </option>
   </component>
@@ -693,18 +693,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/editar-usuario.twig">
+    <entry file="file://$PROJECT_DIR$/views/admin/crear-usuario.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.131578">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.461538">
+          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/crear-usuario.twig">
+    <entry file="file://$PROJECT_DIR$/views/admin/editar-usuario.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036945812">
-          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.035670355">
+          <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
           <folding />
         </state>
       </provider>
