@@ -5,12 +5,6 @@
     <p>
         <a class="btn btn-primary" href="{{ 'admin/entradas/crear' | url }}">Nueva Entrada</a>
     </p>
-    {% if errores %}
-        {% include('partials/errores.twig') %}
-    {% endif %}
-    {% if result %}
-        <div class="alert alert-success">Entrada Eliminada</div>
-    {% endif %}
     {% if entradasBlog is not empty %}
         <table class="table">
             <tr>
