@@ -4,7 +4,7 @@
     <div class="blog-post">
         {% if entradaBlog %}
             <h2>{{ entradaBlog.titulo }}</h2>
-            <p>08/04/2018 por <a href="">Odei</a></p>
+            <p>{{ entradaBlog.created_at }} por <a href="">Admin</a></p>
             <div class="blog-post-image">
                 {% if entrada.imagen %}
                     <img src="{{ entradaBlog.imagen }}" alt="EntradaBlog">

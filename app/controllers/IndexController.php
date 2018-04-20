@@ -16,7 +16,7 @@ class IndexController extends BaseController {
         if ($pagina * self::entradasPorPagina < $totalEntradas) {
             $siguiente = $pagina + 1;
         }
-        $entradasBlog = EntradaBlog::query()->orderBy('id', 'desc')->skip(
+        $entradasBlog = EntradaBlog::query()->orderBy('titulo', 'asc')->skip(
             self::entradasPorPagina * ($pagina - 1))->take(self::entradasPorPagina)->get();
         return $this->render('index.twig', [
             'entradasBlog' => $entradasBlog,

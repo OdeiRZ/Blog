@@ -5,7 +5,7 @@
     {% for entrada in entradasBlog %}
         <div class="blog-post">
             <h2><a href="{{ 'detalle/' | url }}{{ entrada.id }}">{{ entrada.titulo }}</a></h2>
-            <p>08/04/2018 por <a href="">Odei</a></p>
+            <p>{{ entrada.created_at }} por <a href="#">Admin</a></p>
             <div class="blog-post-image">
                 {% if entrada.imagen %}
                     <img src="{{ entrada.imagen }}" alt="EntradaBlog">
