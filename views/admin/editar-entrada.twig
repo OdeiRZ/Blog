@@ -2,9 +2,7 @@
 
 {% block contenido %}
     <h2>Editar Entrada</h2>
-    <p>
-        <a class="btn btn-default" href="{{ 'admin/entradas' | url }}">Volver</a>
-    </p>
+    <a class="btn btn-default" href="{{ 'admin/entradas' | url }}">Volver</a>
     {% if errores %}
         {% include('partials/errores.twig') %}
     {% endif %}

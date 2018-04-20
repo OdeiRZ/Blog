@@ -8,9 +8,13 @@ use Sirius\Validation\Validator;
 
 class EntradaController extends BaseController {
 
-    public function getIndex() {
-        $entradasBlog = EntradaBlog::all();
-        return $this->render('admin/entradas.twig', ['entradasBlog' => $entradasBlog]);
+    public function getIndex(/*$result = null, $errores = null*/) {
+        $entradasBlog = EntradaBlog::all()->sortBy("titulo");
+        return $this->render('admin/entradas.twig', [
+            'entradasBlog' => $entradasBlog,
+            //'result' => $result,
+            //'errores' => $errores
+        ]);
     }
 
     public function getCrear() {
@@ -74,5 +78,22 @@ class EntradaController extends BaseController {
             'errores' => $errores,
             'entradaBlog' => $entradaBlog
         ]);
+    }
+
+    public function getBorrar($idEntrada = null) {
+        //$errores = [];
+        //$result = false;
+        $entradaBlog = EntradaBlog::find($idEntrada);
+        if ($entradaBlog) {
+            $entradaBlog->delete();
+            //$result = true;
+        } else {
+            $errores = [ 'idEntrada' => ['La entrada seleccionada no existe'] ];
+        }
+        header('Location: ' . BASE_URL . 'admin/entradas');
+        /*return $this->render('admin/entradas.twig', [
+            'result' => $result,
+            'errores' => $errores
+        ]);*/
     }
 }
