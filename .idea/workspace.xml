@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cfe431b-97a1-47d4-8171-c6ea79659c33" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/EntradaController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/EntradaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/editar-entrada.twig" afterPath="$PROJECT_DIR$/views/admin/editar-entrada.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/entradas.twig" afterPath="$PROJECT_DIR$/views/admin/entradas.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/usuarios.twig" afterPath="$PROJECT_DIR$/views/admin/usuarios.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Blog.iws" />
@@ -30,8 +29,8 @@
       <file leaf-file-name="EntradaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/EntradaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6233766">
-              <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
+            <state vertical-scroll-proportion="29.071428">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#41#76#0#PHP" expanded="true" />
               </folding>
@@ -39,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.php">
+      <file leaf-file-name="entradas.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/entradas.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.538462">
-              <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+            <state vertical-scroll-proportion="-4.65">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entradas.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/admin/entradas.twig">
+      <file leaf-file-name="usuarios.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/admin/usuarios.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5804455">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.7420986">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,7 +88,6 @@
         <option value="$PROJECT_DIR$/.env.example" />
         <option value="$PROJECT_DIR$/views/admin/crear.twig" />
         <option value="$PROJECT_DIR$/app/models/Usuario.php" />
-        <option value="$PROJECT_DIR$/views/admin/usuarios.twig" />
         <option value="$PROJECT_DIR$/app/controllers/admin/UsuarioController.php" />
         <option value="$PROJECT_DIR$/app/controllers/admin/LoginController.php" />
         <option value="$PROJECT_DIR$/views/admin/login.twig" />
@@ -118,6 +116,7 @@
         <option value="$PROJECT_DIR$/views/admin/editar-entrada.twig" />
         <option value="$PROJECT_DIR$/app/controllers/admin/EntradaController.php" />
         <option value="$PROJECT_DIR$/views/admin/entradas.twig" />
+        <option value="$PROJECT_DIR$/views/admin/usuarios.twig" />
       </list>
     </option>
   </component>
@@ -687,26 +686,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/usuarios.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14572865">
-          <caret line="4" column="61" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19822109">
           <caret line="6" column="89" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/detalle.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6005089">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -769,9 +752,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/detalle.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6509901">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.538462">
+        <state vertical-scroll-proportion="0.70528966">
           <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
           <folding />
         </state>
@@ -779,8 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin/EntradaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6233766">
-          <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
+        <state vertical-scroll-proportion="29.071428">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#41#76#0#PHP" expanded="true" />
           </folding>
@@ -789,8 +780,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/entradas.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5804455">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state vertical-scroll-proportion="-4.65">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/usuarios.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7420986">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -2,25 +2,31 @@
 
 {% block contenido %}
     <h2>Listado Entradas</h2>
-    <a class="btn btn-primary" href="{{ 'admin/entradas/crear' | url }}">Nueva Entrada</a>
+    <p>
+        <a class="btn btn-primary" href="{{ 'admin/entradas/crear' | url }}">Nueva Entrada</a>
+    </p>
     {% if errores %}
         {% include('partials/errores.twig') %}
     {% endif %}
     {% if result %}
         <div class="alert alert-success">Entrada Eliminada</div>
     {% endif %}
-    <table class="table">
-        <tr>
-            <th>Titulo</th>
-            <th></th>
-            <th></th>
-        </tr>
-        {% for entrada in entradasBlog %}
+    {% if entradasBlog is not empty %}
+        <table class="table">
             <tr>
-                <td>{{ entrada.titulo }}</td>
-                <td><a href="{{ 'admin/entradas/editar/' | url }}{{ entrada.id }}">Editar</a></td>
-                <td><a href="{{ 'admin/entradas/borrar/' | url }}{{ entrada.id }}">Borrar</a></td>
+                <th>Titulo</th>
+                <th></th>
+                <th></th>
             </tr>
-        {% endfor %}
-    </table>
+            {% for entrada in entradasBlog %}
+                <tr>
+                    <td>{{ entrada.titulo }}</td>
+                    <td><a href="{{ 'admin/entradas/editar/' | url }}{{ entrada.id }}">Editar</a></td>
+                    <td><a href="{{ 'admin/entradas/borrar/' | url }}{{ entrada.id }}">Borrar</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No hay entrada para mostrar</p>
+    {% endif %}
 {% endblock %}
