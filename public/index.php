@@ -1,15 +1,16 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startups_erros', 1);
-error_reporting(E_ALL);
-
 require_once '../vendor/autoload.php';
 
 session_start();
 
 $dotEnv = new \Dotenv\Dotenv(__DIR__ . '/..');
 $dotEnv->load();
+
+$debug = filter_var(getenv('APP_DEBUG'), FILTER_VALIDATE_BOOLEAN);
+ini_set('display_errors', $debug ? 1 : 0);
+ini_set('display_startups_erros', $debug ? 1 : 0);
+error_reporting($debug ? E_ALL : 0);
 
 $baseDir = str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 $baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . $baseDir;
