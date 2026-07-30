@@ -36,6 +36,10 @@ Blog con panel de administración construido en PHP a medida sobre componentes d
    ```
 5. Accede a `/acceso/login` para entrar al panel de administración en `/admin`.
 
+## Seguridad
+
+El fichero `.env` (que contenía credenciales reales de base de datos) se ha desvinculado del control de versiones y se ha añadido `.gitignore`. La visualización de errores de PHP y el modo debug de Twig ahora solo se activan si `APP_DEBUG` está definido, en vez de mostrar siempre trazas completas.
+
 ## Licencia
 
 Sin archivo de licencia en el repositorio.
